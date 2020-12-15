@@ -34,6 +34,14 @@ class CreateTodo extends Component {
   }
 };
 
+handleSubmit = event => {
+  event.preventDefault();
+  this.props.addTodo(this.state)
+  this.setState({
+    text: '',
+  })
+}
+
 const mapDispatchToProps = dispatch => ({
   addTodo: formData => dispatch({ type: 'ADD_TODO', payload: formData })
 })
